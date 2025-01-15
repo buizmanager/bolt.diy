@@ -24,7 +24,11 @@
     "typecheck": "tsc",
     "typegen": "wrangler types",
     "preview": "pnpm run build && pnpm run start",
-    "prepare": "husky"
+    "prepare": "husky",
+    "build:worker": "cloudflare",
+    "dev:worker": "wrangler dev --port 5678",
+    "preview:worker": "npm run build:worker && npm run dev:worker",
+    "deploy:worker": "npm run build:worker && wrangler deploy"
   },
   "engines": {
     "node": ">=18.18.0"
